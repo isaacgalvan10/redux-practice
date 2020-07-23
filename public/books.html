@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>CodingPhase - Learn To Code and Get Paid ASAP!</title>
+  <meta property="og:title" content="CodingPhase - Learn To Code and Get Paid ASAP!">
+  <meta name="description"
+    content="Learn how to code from the best platform by building real projects that will help you land the dream job and get a high paying salary">
+  <meta property="og:description"
+    content="Learn how to code from the best platform by building real projects that will help you land the dream job and get a high paying salary">
+  <meta property="og:image" content="https://codingphase.com/img/websitethumb.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta property="og:site_name" content="CodingPhase LLC">
+  <meta name="twitter:image:alt" content="Learn how to code from one of the best platforms online.">
+  <meta name="twitter:site" content="@codingphase">
+  <meta property="og:url" content="https://codingphase.com">
+  <link rel="canonical" href="/">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ad38f1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+  <link rel="apple-touch-icon" sizes="120x120" href="/img/icons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/img/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/img/iconsfavicon-16x16.png">
+  <link rel="mask-icon" href="/img/icons/safari-pinned-tab.svg" color="#5bbad5">
+  <link rel="manifest" href="/manifest.json">
+  <link rel="stylesheet" href="/css/styles.css">
+  <link rel="stylesheet" href="/css/styles.css">
+  <script async="" defer="" src="https://buttons.github.io/buttons.js"></script>
+  <script src="https://unpkg.com/redux@latest/dist/redux.min.js"></script>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    #approot {
+
+    }
+    .all-books {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-gap: 40px 20px;
+      padding: 40px 0;
+    }
+    .book-container {
+      height: 300px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .book-container .book {
+      background: red;
+      width: 200px;
+      height: 300px;
+      background-image: url(https://upload.wikimedia.org/wikipedia/en/thumb/2/2a/X-Men_v1_141.jpg/220px-X-Men_v1_141.jpg);
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+    #myList {
+      background: white;
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: 400px;
+      height: 100vh;
+      padding: 20px;
+      -webkit-box-shadow: -12px 10px 71px -20px rgba(0,0,0,0.75);
+      -moz-box-shadow: -12px 10px 71px -20px rgba(0,0,0,0.75);
+      box-shadow: -12px 10px 71px -20px rgba(0,0,0,0.75);
+      transform: translateX(500px);
+      transition: transform .4s ease-in-out;
+    }
+    #myList.active {
+      transform: translateX(0);
+    }
+
+    #myList h3 {
+      font-size: 2rem;
+      text-align: center;
+      margin-bottom: 1.5rem;
+      
+    }
+    #myList ul {
+      margin: 0 0 1.5rem 20px;
+    }
+    #myList ul li {
+      display: list-item;
+      padding: 10px 0;
+      list-style-type: circle;
+    }
+    #myList ul li span.delete-btn {
+      display: inline-block;
+      padding: 10px;
+      margin-left: 20px;
+      background: red;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    #myList .close-list {
+      margin: 0 auto;
+      background: black;
+      color: white;
+      padding: 20px 40px;
+      text-align: center;
+      cursor: pointer;
+    }
+    .open-list {
+      position: fixed;
+      top: 0;
+      right: 0;
+      background: black;
+      padding: 15px;
+      font-size: 2rem;
+      color: white;
+      cursor: pointer;
+    }
+    .open-list.closed {
+      display: block;
+    }
+    .open-list.open {
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="approot">
+    <div class="container">
+      <div class="open-list">
+        <i class="fas fa-bars"></i>
+      </div>
+      <section class="all-books">
+        <div class="book-container">
+          <div class="book">
+
+          </div>
+        </div>
+        <div class="book-container">
+          <div class="book">
+
+          </div>
+        </div>
+        <div class="book-container">
+          <div class="book">
+
+          </div>
+        </div>
+        <div class="book-container">
+          <div class="book">
+
+          </div>
+        </div>
+        <div class="book-container">
+          <div class="book">
+
+          </div>
+        </div>
+        <div class="book-container">
+          <div class="book">
+
+          </div>
+        </div>
+      </section>
+    </div>
+    <section id="myList">
+      <h3>My List of Books</h3>
+      <ul>
+        <li>X-MEN <span class="delete-btn">Delete</span></li>
+        <li>Harry Potter <span class="delete-btn">Delete</span></li>
+        <li>Harry Potter <span class="delete-btn">Delete</span></li>
+        <li>Harry Potter <span class="delete-btn">Delete</span></li>
+      </ul>
+      <div class="close-list">Close List</div>
+    </section>
+    <section id="modal" class="active">
+      <div class="modal-grid">
+        <div class="images">
+          <div class="cover">
+            Cover Image
+          </div>
+        </div>
+        <div class="info">
+          <h2>Title</h2>
+          <div class="info-line">
+            <span class="bold">Author:</span>
+            Chris Claremont
+          </div>
+          <div class="info-line">
+            <span class="bold">Illustrator:</span>
+            John Byrne
+          </div>
+          <div class="info-line">
+            <span class="bold">Published:</span>
+            1981
+          </div>
+          <p class="review">"Days of Future Past" is a storyline in the Marvel Comics comic book The Uncanny X-Men issues #141–142, published in 1981. It deals with a dystopian future in which mutants are incarcerated in internment camps.</p>
+        </div>
+      </div>
+    </section>
+  </div>
+</body>
+
+</html>
