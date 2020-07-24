@@ -1,0 +1,207 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.all-books {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 40px 20px;
+  padding: 40px 0;
+}
+
+.book-container {
+  height: 300px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.book-container .book {
+  background: red;
+  width: 200px;
+  height: 300px;
+  background-image: url(https://upload.wikimedia.org/wikipedia/en/thumb/2/2a/X-Men_v1_141.jpg/220px-X-Men_v1_141.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+#myList {
+  background: white;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 400px;
+  height: 100vh;
+  padding: 20px;
+  -webkit-box-shadow: -12px 10px 71px -20px rgba(0, 0, 0, 0.75);
+  box-shadow: -12px 10px 71px -20px rgba(0, 0, 0, 0.75);
+  -webkit-transform: translateX(500px);
+          transform: translateX(500px);
+  -webkit-transition: -webkit-transform .4s ease-in-out;
+  transition: -webkit-transform .4s ease-in-out;
+  transition: transform .4s ease-in-out;
+  transition: transform .4s ease-in-out, -webkit-transform .4s ease-in-out;
+}
+
+#myList h3 {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+#myList ul {
+  margin: 0 0 1.5rem 20px;
+}
+
+#myList ul li {
+  display: list-item;
+  padding: 10px 0;
+  list-style-type: circle;
+}
+
+#myList ul li span.delete-btn {
+  display: inline-block;
+  padding: 10px;
+  margin-left: 20px;
+  background: red;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#myList .close-list {
+  margin: 0 auto;
+  background: black;
+  color: white;
+  padding: 20px 40px;
+  text-align: center;
+  cursor: pointer;
+}
+
+#myList.active {
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+}
+
+.open-list {
+  position: fixed;
+  top: 0;
+  right: 0;
+  background: black;
+  padding: 15px;
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+}
+
+.open-list.closed {
+  display: block;
+}
+
+.open-list.open {
+  display: none;
+}
+
+#modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100vh;
+  width: 100%;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.75);
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: all .4 ease-in-out;
+  transition: all .4 ease-in-out;
+}
+
+#modal .modal-container {
+  max-width: 600px;
+  background: white;
+  border-radius: 5px;
+  padding: 20px;
+  position: relative;
+}
+
+#modal .modal-container .info {
+  font-size: 1.1rem;
+}
+
+#modal .modal-container .info h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1.2rem;
+}
+
+#modal .modal-container .info .info-line {
+  font-weight: 400;
+  margin-bottom: .4rem;
+}
+
+#modal .modal-container .info span {
+  font-weight: 900;
+}
+
+#modal .modal-container .info p {
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+#modal .modal-container .close-modal {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 20px;
+  color: white;
+  background: red;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#modal .modal-grid {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 200px 1fr;
+      grid-template-columns: 200px 1fr;
+  grid-gap: 20px;
+}
+
+#modal .images {
+  width: 200px;
+}
+
+#modal .images .cover {
+  height: 300px;
+}
+
+#modal.active {
+  visibility: visible;
+  background: rgba(0, 0, 0, 0.75);
+  opacity: 1;
+}
+/*# sourceMappingURL=books.css.map */

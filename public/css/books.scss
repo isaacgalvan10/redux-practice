@@ -1,0 +1,164 @@
+* {
+	box-sizing: border-box;
+}
+.container {
+	max-width: 1200px;
+	margin: 0 auto;
+}
+.all-books {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-gap: 40px 20px;
+	padding: 40px 0;
+}
+.book-container {
+	height: 300px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	.book {
+		background: red;
+		width: 200px;
+		height: 300px;
+		background-image: url(https://upload.wikimedia.org/wikipedia/en/thumb/2/2a/X-Men_v1_141.jpg/220px-X-Men_v1_141.jpg);
+		background-size: cover;
+		background-position: center;
+		background-repeat: no-repeat;
+	}
+}
+#myList {
+	background: white;
+	position: fixed;
+	top: 0;
+	right: 0;
+	width: 400px;
+	height: 100vh;
+	padding: 20px;
+	-webkit-box-shadow: -12px 10px 71px -20px rgba(0,0,0,0.75);
+	-moz-box-shadow: -12px 10px 71px -20px rgba(0,0,0,0.75);
+	box-shadow: -12px 10px 71px -20px rgba(0,0,0,0.75);
+	transform: translateX(500px);
+	transition: transform .4s ease-in-out;
+	h3 {
+		font-size: 2rem;
+		text-align: center;
+		margin-bottom: 1.5rem;
+	}
+	ul {
+		margin: 0 0 1.5rem 20px;
+		li {
+			display: list-item;
+			padding: 10px 0;
+			list-style-type: circle;
+			span.delete-btn {
+				display: inline-block;
+				padding: 10px;
+				margin-left: 20px;
+				background: red;
+				color: white;
+				border-radius: 5px;
+				cursor: pointer;
+			}
+		}
+	}
+	.close-list {
+		margin: 0 auto;
+		background: black;
+		color: white;
+		padding: 20px 40px;
+		text-align: center;
+		cursor: pointer;
+	}
+}
+#myList.active {
+	transform: translateX(0);
+}
+.open-list {
+	position: fixed;
+	top: 0;
+	right: 0;
+	background: black;
+	padding: 15px;
+	font-size: 2rem;
+	color: white;
+	cursor: pointer;
+}
+.open-list.closed {
+	display: block;
+}
+.open-list.open {
+	display: none;
+}
+
+#modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+  padding: 20px;
+  background: rgba(0,0,0,0.75);
+  opacity: 0;
+  visibility: hidden;
+  transition: all .4 ease-in-out;
+
+  .modal-container {
+    max-width: 600px;
+    background: white; 
+    border-radius: 5px;
+    padding: 20px;
+    position: relative;
+
+    .info {
+      font-size: 1.1rem;
+      h2 {
+        font-size: 2rem;
+        font-weight: 700;
+        margin-bottom: 1.2rem;
+      }
+      .info-line {
+        font-weight: 400;
+        margin-bottom: .4rem;
+      }
+      span {
+        font-weight: 900;
+      }
+      p {
+        font-weight: 400;
+        line-height: 1.4;
+      }
+    }
+    .close-modal {
+      position: absolute;
+      top: 0;
+      right: 0;
+      padding: 20px;
+      color: white;
+      background: red;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  }
+
+  .modal-grid {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    grid-gap: 20px;
+  }
+
+  .images {
+    width: 200px;
+  
+    .cover {
+      height: 300px;
+    }
+  }
+}
+#modal.active {
+  visibility: visible;
+  background: rgba(0,0,0,0.75);
+  opacity: 1;
+}
