@@ -1,41 +1,43 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { closeInfoBook } from '../actions/allActions';
 
 class Modal extends Component {
-	state = {};
 	render() {
+		const book = this.props.globalState.openInfoBook;
 		return (
-			<div id="modal">
+			<div
+				id="modal"
+				className={this.props.globalState.popupOpen === true ? 'active' : ''}
+			>
 				<div className="modal-container">
-					<div className="close-modal">
+					<div className="close-modal" onClick={this.props.closeInfoBook}>
 						<i className="fas fa-times"></i>
 					</div>
 					<div className="modal-grid">
 						<div className="images">
 							<div
 								className="cover"
-								style="background-image: url(https://upload.wikimedia.org/wikipedia/en/thumb/2/2a/X-Men_v1_141.jpg/220px-X-Men_v1_141.jpg); background-size: cover;"
+								style={{
+									backgroundImage: `url('${book.coverURL}')`
+								}}
 							></div>
 						</div>
 						<div className="info">
-							<h2>Title</h2>
+							<h2>{book.title}</h2>
 							<div className="info-line">
-								<span className="bold">Author:</span>
-								Chris Claremont
+								<span className="bold">Author: </span>
+								{book.author}
 							</div>
 							<div className="info-line">
-								<span className="bold">Illustrator:</span>
-								John Byrne
+								<span className="bold">Category: </span>
+								{book.category}
 							</div>
 							<div className="info-line">
-								<span className="bold">Published:</span>
-								1981
+								<span className="bold">Published: </span>
+								{book.published}
 							</div>
-							<p className="review">
-								"Days of Future Past" is a storyline in the Marvel Comics comic
-								book The Uncanny X-Men issues #141–142, published in 1981. It
-								deals with a dystopian future in which mutants are incarcerated
-								in internment camps.
-							</p>
+							<p className="review">{book.review}</p>
 						</div>
 					</div>
 				</div>
@@ -44,4 +46,9 @@ class Modal extends Component {
 	}
 }
 
-export default Modal;
+const mapStateToProps = state => {
+	return state;
+};
+export default connect(mapStateToProps, {
+	closeInfoBook
+})(Modal);

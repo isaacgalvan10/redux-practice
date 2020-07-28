@@ -3,6 +3,11 @@
           box-sizing: border-box;
 }
 
+#approot.popupOpen {
+  -webkit-filter: blur(50px);
+          filter: blur(50px);
+}
+
 .container {
   max-width: 1200px;
   margin: 0 auto;
@@ -34,10 +39,10 @@
   background: red;
   width: 200px;
   height: 300px;
-  background-image: url(https://upload.wikimedia.org/wikipedia/en/thumb/2/2a/X-Men_v1_141.jpg/220px-X-Men_v1_141.jpg);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  cursor: pointer;
 }
 
 #myList {
@@ -136,8 +141,8 @@
   background: rgba(0, 0, 0, 0.75);
   opacity: 0;
   visibility: hidden;
-  -webkit-transition: all .4 ease-in-out;
-  transition: all .4 ease-in-out;
+  -webkit-transition: all .4s ease-in-out;
+  transition: all .4s ease-in-out;
 }
 
 #modal .modal-container {
@@ -196,7 +201,10 @@
 }
 
 #modal .images .cover {
+  background-size: cover;
   height: 300px;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 #modal.active {

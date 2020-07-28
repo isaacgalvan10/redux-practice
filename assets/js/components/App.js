@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import AllBooks from './AllBooks';
 import MyList from './MyList';
+import { connect } from 'react-redux';
 
 class App extends Component {
 	constructor() {
@@ -9,7 +10,10 @@ class App extends Component {
 
 	render() {
 		return (
-			<div id="approot">
+			<div
+				id="approot"
+				className={this.props.globalState.popupOpen === true ? 'popupOpen' : ''}
+			>
 				<div className="container">
 					<div className="open-list">
 						<i className="fas fa-bars"></i>
@@ -22,4 +26,7 @@ class App extends Component {
 	}
 }
 
-export default App;
+const mapStateToProps = state => {
+	return state;
+};
+export default connect(mapStateToProps)(App);
