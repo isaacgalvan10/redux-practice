@@ -1,7 +1,7 @@
-export const addBook = book => {
+export const addBook = bookTitle => {
 	return {
 		type: 'ADD_BOOK',
-		payload: book
+		payload: bookTitle
 	};
 };
 

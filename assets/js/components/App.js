@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import AllBooks from './AllBooks';
 import MyList from './MyList';
 import { connect } from 'react-redux';
+import { openMyList } from './../actions/allActions';
 
 class App extends Component {
 	constructor() {
@@ -15,7 +16,7 @@ class App extends Component {
 				className={this.props.globalState.popupOpen === true ? 'popupOpen' : ''}
 			>
 				<div className="container">
-					<div className="open-list">
+					<div className="open-list" onClick={this.props.openMyList}>
 						<i className="fas fa-bars"></i>
 					</div>
 					<AllBooks />
@@ -29,4 +30,4 @@ class App extends Component {
 const mapStateToProps = state => {
 	return state;
 };
-export default connect(mapStateToProps)(App);
+export default connect(mapStateToProps, { openMyList })(App);

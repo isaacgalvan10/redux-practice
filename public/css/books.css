@@ -175,6 +175,15 @@
 #modal .modal-container .info p {
   font-weight: 400;
   line-height: 1.4;
+  margin-bottom: 1.5rem;
+}
+
+#modal .modal-container .info .add-btn {
+  padding: 20px 40px;
+  display: inline-block;
+  color: white;
+  background: green;
+  cursor: pointer;
 }
 
 #modal .modal-container .close-modal {

@@ -131,8 +131,16 @@
       }
       p {
         font-weight: 400;
-        line-height: 1.4;
-      }
+				line-height: 1.4;
+				margin-bottom: 1.5rem;
+			}
+			.add-btn {
+				padding: 20px 40px;
+				display: inline-block;
+				color: white;
+				background: green;
+				cursor: pointer;
+			}
     }
     .close-modal {
       position: absolute;
@@ -161,7 +169,7 @@
 			background-size: cover;
 			background-repeat: no-repeat;
     }
-  }
+	}
 }
 #modal.active {
   visibility: visible;
